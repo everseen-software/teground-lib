@@ -11,3 +11,7 @@ before_build:
   - IF EXIST C:\OpenCV* CD C:\OpenCV*
   - SET OPENCV_ROOT_PATH=%CD%\opencv
   - SET OPENCV_DIR=%OPENCV_ROOT_PATH%\build\%ARCH%\vc12\bin
+  
+build_script:
+  - cmake -G "Visual Studio 12 2013 Win64" ../tests
+  - msbuild TegroundLib.sln

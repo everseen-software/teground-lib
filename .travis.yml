@@ -1,0 +1,13 @@
+language: cpp
+
+compiler:
+  - gcc
+
+install:
+  - sudo apt-get install libopencv-dev
+
+before_script:
+  - cd build
+  - cmake ..
+
+script: make

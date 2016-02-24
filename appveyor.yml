@@ -1,0 +1,13 @@
+os: unstable
+
+platform:
+  - x64
+
+install:
+  - choco install OpenCV
+
+before_build:
+  - SET ARCH=x64
+  - IF EXIST C:\OpenCV* CD C:\OpenCV*
+  - SET OPENCV_ROOT_PATH=%CD%\opencv
+  - SET OPENCV_DIR=%OPENCV_ROOT_PATH%\build\%ARCH%\vc12\bin

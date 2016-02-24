@@ -8,6 +8,6 @@ install:
 
 before_script:
   - cd build
-  - cmake ..
+  - cmake ../tests
 
 script: make

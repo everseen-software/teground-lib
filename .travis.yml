@@ -9,9 +9,17 @@ before_install:
 
 install:
   - sudo apt-get install libopencv-dev cmake-data cmake
-  - cmake --version
 
 before_script:
+  - git clone https://github.com/Itseez/opencv.git
+  - cd opencv
+  - git checkout 2.4
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make -j8
+  - sudo make -j8 install
+  - cd ../..
   - cd build
   - cmake ../tests
 

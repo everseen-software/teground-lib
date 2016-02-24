@@ -4,7 +4,8 @@ compiler:
   - gcc
 
 install:
-  - sudo apt-get install libopencv-dev
+  - sudo apt-get install libopencv-dev cmake
+  - cmake --version
 
 before_script:
   - cd build

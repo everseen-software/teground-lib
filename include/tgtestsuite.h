@@ -190,8 +190,9 @@ void TestSuite::draw(
     int drawPosition = trackHeight;
     for ( std::vector<TrackTest*>::iterator it = m_tests.begin(); it != m_tests.end(); ++it ){
         TrackTest* t = *it;
+        cv::Mat trackRegion = dst(cv::Rect(0, drawPosition, dstWidth, trackHeight));
         t->draw(
-            dst(cv::Rect(0, drawPosition, dstWidth, trackHeight)),
+            trackRegion,
             seqIt,
             framePosition,
             numberOfFrames,

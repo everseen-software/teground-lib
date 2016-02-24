@@ -36,7 +36,6 @@ bool isFilledWith(const cv::Mat& mat, const cv::Scalar& color){
         for ( int j = 0; j < mat.cols; ++j ){
             for ( int c = 0; c < mat.channels(); ++c ){
                 if ( p[j * mat.channels() + c] != (int)(color[c]) ){
-                    printf("%d", p[j * mat.channels() + c]);
                     return false;
                 }
             }

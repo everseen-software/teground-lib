@@ -3,12 +3,18 @@ language: cpp
 compiler:
   - gcc
 
+before_install:
+  - sudo add-apt-repository ppa:george-edison55/precise-backports --yes
+  - sudo apt-get update
+
 install:
-  - sudo apt-get install libopencv-dev cmake
+  - sudo apt-get install libopencv-dev cmake-data cmake
   - cmake --version
 
 before_script:
   - cd build
   - cmake ../tests
 
-script: make
+script: 
+  - make
+  - make check

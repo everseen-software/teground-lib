@@ -6,3 +6,7 @@ platform:
 install:
   - choco install opencv -version 2.4.9.20140518 
 
+before_build:
+  - SET ARCH=x64
+  - echo %APP_PATH%
+  - echo %CD%

@@ -4,7 +4,7 @@ platform:
   - x64
 
 install:
-  - choco install OpenCV
+  - choco install opencv -version 2.4.9.20140518 
 
 before_build:
   - SET ARCH=x64

@@ -55,8 +55,8 @@ inline void SegmentAssertionConsoleWriter::onAssertionInsert(SegmentAssertion *a
     switch( assertion->type() ){
     case SegmentAssertion::SINGLE_STAMP:
     case SegmentAssertion::MULTI_STAMP: typeString = "Stamp"; break;
-    case SegmentAssertion::SINGLE_SEGMENT:
-    case SegmentAssertion::MULTI_SEGMENt: typeString = "Segment"; break;
+    case SegmentAssertion::SINGLE_OVERLAP:
+    case SegmentAssertion::MULTI_OVERLAP: typeString = "Segment"; break;
     case SegmentAssertion::UNMARKED_SEGMENT: typeString = "Unmarked"; break;
     }
 

@@ -300,9 +300,9 @@ inline void SegmentTrackTest::advanceCursorSequence(DataFile::SequenceIterator i
     if ( m_cursorSequenceIt != data()->sequencesEnd() ){
         track = static_cast<SegmentTrack*>((*m_cursorSequenceIt)->track(trackHeader()));
         m_cursorSegmentIt = track->begin();
+        m_cursorPosition    = 0;
+        m_assertionCursorIt = m_assertions[m_cursorSequenceIt - data()->sequencesBegin()].begin();
     }
-    m_cursorPosition    = 0;
-    m_assertionCursorIt = m_assertions[m_cursorSequenceIt - data()->sequencesBegin()].begin();
 }
 
 inline void SegmentTrackTest::advanceCursorPosition(VideoTime position, const std::string& file, int lineNumber){
@@ -906,7 +906,7 @@ inline void SegmentTrackTest::overlap(
         if ( insert ){
             insertAssertion(m_cursorSequenceIt, new SegmentAssertion(
                 position,
-                1,
+                length,
                 SegmentAssertion::MATCH,
                 isSingle ? SegmentAssertion::SINGLE_STAMP : SegmentAssertion::MULTI_STAMP,
                 info,
@@ -921,7 +921,7 @@ inline void SegmentTrackTest::overlap(
 
     insertAssertion(m_cursorSequenceIt, new SegmentAssertion(
         position,
-        1,
+        length,
         SegmentAssertion::MISS,
         isSingle ? SegmentAssertion::SINGLE_STAMP : SegmentAssertion::MULTI_STAMP,
         info,
